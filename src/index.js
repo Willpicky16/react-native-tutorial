@@ -1,22 +1,33 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text,View } from 'react-native';
 
-export default class ReactTutorial extends Component {
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {showText: true}
+
+    setInterval(() => {
+      this.setState({ showText: !this.state.showText })
+    }, 1000);
+  }
+  render() {
+    let display = this.state.showText ? this.props.text : ' ';
+    return (
+      <Text>{display}</Text>
+    );
+  }
+}
+
+export default class BlinkText extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View>
+        <Blink text='Hello this is blinking' />
+        <Blink text='Hahahaha this is blinking' />
+        <Blink text='This is funny' />
+        <Blink text='Hello bye' />
       </View>
-    );
+    )
   }
 }
 
