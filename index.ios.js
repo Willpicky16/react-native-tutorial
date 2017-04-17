@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import ReactTutorial from './src/index';
+import App from './src/index';
 
-AppRegistry.registerComponent('ReactTutorial', () => ReactTutorial);
+AppRegistry.registerComponent('ReactTutorial', () => App);
